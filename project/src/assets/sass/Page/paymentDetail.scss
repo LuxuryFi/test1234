@@ -1,0 +1,83 @@
+.payment-detail-container {
+  margin: 0 auto;
+  padding: $pd-4 0;
+  .payment-detail-content {
+    min-height: 200px;
+    padding: $pd-4;
+    border-radius: $border-radius-2;
+    border: 1px solid $color-line-0;
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: $mg-3;
+    }
+    .logo-container {
+      @extend %logo-container;
+      .logo-img {
+        width: 80px;
+        height: 80px;
+      }
+      .logo-text {
+        font-size: $fs-2 - 6;
+      }
+    }
+    .left {
+      text-align: left;
+    }
+    .right {
+      text-align: right;
+    }
+    .info-item {
+      margin-bottom: $mg-0;
+      .payment-title {
+        @include styleText($color-brown-1, $fs-3, $fw-2);
+      }
+      .payment-title-sub {
+        @include styleText($color-gray-1, $fs-3, $fw-0);
+      }
+      .payment-info {
+        margin-top: $mg-4;
+        @include styleText($color-gray-1, $fs-0 + 2, $fw-0);
+      }
+    }
+    .bill-container {
+      margin-top: $mg-0;
+      .info-item {
+        width: 250px;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: $pd-1 + 1;
+        padding-bottom: $pd-0;
+        padding-top: $pd-0;
+        margin-bottom: 0;
+        border-bottom: 1px solid $color-line-0;
+        .payment-title,
+        .payment-info {
+          display: inline-block;
+          margin: 0;
+        }
+      }
+      .info-item:last-child {
+        border-bottom: none;
+      }
+    }
+    &.loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .spinner {
+        width: 80px;
+        height: 80px;
+        border-top: 5px solid $color-tomato;
+      }
+      .text-loading {
+        text-align: center;
+        margin-top: $mg-1;
+        @include styleText($color-brown-1, $fs-3, $fw-0);
+      }
+    }
+  }
+}

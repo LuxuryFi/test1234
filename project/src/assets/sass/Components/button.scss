@@ -1,0 +1,159 @@
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  border-radius: $border-radius-4;
+  margin-right: $mg-4;
+  margin-left: $mg-4;
+  outline: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+
+  &.button--light {
+    @include styleButton(
+      $color-black-0,
+      $color-white-0,
+      $color-black-0,
+      $fs-0,
+      $fw-1,
+      $pd-2,
+      $pd-3
+    );
+    &:hover {
+      @include hoverButton($color-white-0, $color-blue-1, $color-blue-1);
+    }
+  }
+
+  &.button--blue--dark {
+    @include styleButton(
+      $color-white-0,
+      $color-tomato,
+      $color-tomato,
+      $fs-0 + 1,
+      $fw-1,
+      $pd-0,
+      $pd-3
+    );
+    &:hover {
+      @include hoverButton($color-white-0, $color-blue-1, $color-blue-1);
+    }
+    font-weight: normal;
+  }
+
+  &.button--blue--light {
+    @include styleButton(
+      $color-white-0,
+      $color-blue-1,
+      $color-blue-1,
+      $fs-0,
+      $fw-1,
+      $pd-0,
+      $pd-3
+    );
+    &:hover {
+      @include hoverButton($color-white-0, $color-tomato, $color-tomato);
+    }
+    font-weight: normal;
+  }
+
+  &.button--text--white {
+    @include styleButton($color-white-0, transparent, none, $fs-0, $fw-1, 0, 0);
+    border: none;
+    &:hover {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+  }
+
+  &.button--text--blue {
+    @include styleButton($color-blue-1, transparent, none, $fs-0, $fw-1, 0, 0);
+    border: none;
+  }
+
+  &.button--text--red {
+    @include styleButton(#d0011b, transparent, none, $fs-0, $fw-1, 0, 0);
+    border: none;
+  }
+
+  &.button--main--book {
+    background-color: #d0011b;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 0;
+    border: 1px solid #d36a68;
+    &:hover {
+      background-color: #d36a68;
+    }
+    .icon {
+      margin-left: 0;
+      margin-right: 5px;
+    }
+  }
+
+  &.button--light--book {
+    @include styleButton(
+      $color-black-0,
+      $color-white-0,
+      $color-black-0,
+      $fs-0,
+      $fw-1,
+      $pd-1 - 1,
+      $pd-3
+    );
+    &:hover {
+      @include hoverButton($color-white-0, $color-tomato, $color-tomato);
+    }
+    .icon {
+    }
+  }
+
+  .icon {
+    margin-left: $mg-4;
+  }
+
+  &:disabled {
+    background-color: $color-gray-0;
+    border: 1px solid $color-gray-0;
+    color: $color-gray-1;
+    cursor: default;
+    &:hover {
+      background-color: $color-gray-0;
+      border: 1px solid $color-gray-0;
+      cursor: default;
+      color: $color-gray-1;
+    }
+  }
+
+  &.square {
+    border-radius: $border-radius-3;
+  }
+
+  &.rounded {
+    border-radius: $border-radius-4;
+  }
+}
+
+.payment-row {
+  .button-container {
+    .button {
+      padding: $pd-2 $pd-1;
+      display: flex;
+      .icon {
+        margin-left: 0;
+        margin-right: $mg-0;
+      }
+    }
+  }
+}
+
+.payment-detail-content {
+  .checkout-button {
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: auto;
+  }
+}

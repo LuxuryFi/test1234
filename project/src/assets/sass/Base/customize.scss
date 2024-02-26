@@ -1,0 +1,53 @@
+// ----------- Ant design -----------
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+// Antd table
+.ant-table-wrapper {
+  border: 1px solid $color-line-0;
+  border-radius: $border-radius-2;
+
+  .ant-table-content {
+    border-radius: 10px;
+    .ant-table-thead {
+      .ant-table-cell {
+        @include styleText($color-white-0, $fs-0, $fw-1);
+      }
+    }
+  }
+}
+
+thead[class*='ant-table-thead'] th {
+  background-color: rgba($color: $color-tomato, $alpha: 1);
+}
+
+.ant-table-wrapper {
+  &.detail-table {
+    margin-top: $mg-1;
+    border-radius: 0;
+  }
+  .ant-table-content {
+    border-radius: 0;
+  }
+}
+
+// ----------- Type Writer -----------
+.Typewriter__wrapper {
+  @include styleText($color-tomato, $fs-6 - 2, $fw-3);
+  text-transform: capitalize;
+}
+
+.Typewriter__cursor {
+  font-weight: $fw-4;
+  font-size: $fs-6;
+}
